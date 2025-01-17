@@ -1,21 +1,20 @@
 ---
-import { Image } from 'astro:assets';
 import Footer from '../components/footer.astro';
 import Head from '../components/head.astro';
-import '../styles/flexbox.css';
-import '../styles/global.css';
-import '../styles/about.css';
+import type { darkmode } from '../js/darkmode.js';
+import '../css/flexbox.css';
+import '../css/global.css';
+import '../css/about.css';
 import '@fontsource/be-vietnam-pro';
 
-import stamp from '../assets/site/stamp.png';
-import hr from '../assets/site/hr.png';
-import border from '../assets/site/border.png';
+import { Image } from 'astro:assets';
+const images = import.meta.glob("../assets/**/*.{png,jpg,jpeg,gif}");
 ---
 <html lang="en">
   <Head/>
-  <body>
+  <body onload="onload()">
     <header><a href="/">
-      <Image src={stamp} alt="yay"/>
+      <Image src={images["../assets/site/stamp.png"]()} alt=""/>
     </a></header>
     <main>
       <h1>~/whoami</h1>
@@ -64,28 +63,28 @@ import border from '../assets/site/border.png';
       <h2>favorites list</h2>
       <article id="favorites" class="grid4 flexbox">
         <aside class="flexbox">
-          <Image src={stamp} alt=""/>
+          <Image src={images["../assets/site/stamp.png"]()} alt=""/>
           <div>
             <h3>Portal 2</h3>
             <p>blah blah blah filler text here</p>
           </div>
         </aside>
         <aside class="flexbox">
-          <Image src={stamp} alt=""/>
+          <Image src={images["../assets/site/stamp.png"]()} alt=""/>
           <div>
             <h3>Tamagotchi</h3>
             <p>blah blah blah filler text here</p>
           </div>
         </aside>
         <aside class="flexbox">
-          <Image src={stamp} alt=""/>
+          <Image src={images["../assets/site/stamp.png"]()} alt=""/>
           <div>
             <h3>title</h3>
             <p>blah blah blah filler text here</p>
           </div>
         </aside>
         <aside class="flexbox">
-          <Image src={stamp} alt=""/>
+          <Image src={images["../assets/site/stamp.png"]()} alt=""/>
           <div>
             <h3>title</h3>
             <p>blah blah blah filler text here</p>
