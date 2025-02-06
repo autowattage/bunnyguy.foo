@@ -57,7 +57,7 @@ hr {
 }
 a { color: var(--blue-link); }
 a:hover, a:visited, a:active { color: var(--purple-link); }
-
+.center {text-align: center;}
 @media screen and (min-width: 40rem) {
   li {margin: 0;}
 }
